@@ -42,7 +42,7 @@ resource "aws_ecs_task_definition" "app" {
       "options": {
         "awslogs-group": "${local.log_group}",
         "awslogs-region": "us-east-1",
-        "awslogs-stream-prefix": "ecs"
+        "awslogs-stream-prefix": "fargate"
       }
     }
   }
