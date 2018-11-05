@@ -1,0 +1,20 @@
+# this file is used by fargate-create (https://github.com/turnerlabs/fargate-create)
+# if not using fargate-create, this file can be ignored/deleted
+
+prompts:
+
+  - question: "Would you like an IAM user that can be used for CI/CD pipelines?"
+    default: "no"
+    filesToDeleteIfNo:
+      - "cicd.tf"
+
+  - question: "Would you like to ship your container logs to logz.io (requires a key)?"
+    default: "no"
+    filesToDeleteIfNo:
+      - "logs-logzio.tf"      
+      - "logs-logzio.zip"
+
+  - question: "Would you like an integrated Secrets Manager secret?"
+    default: "no"
+    filesToDeleteIfNo:
+      - "secretsmanager.tf"
