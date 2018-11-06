@@ -34,9 +34,7 @@ data "aws_iam_policy_document" "cicd_policy" {
 
     actions = [
       "ecr:GetAuthorizationToken",
-      "ecs:DescribeServices",
       "ecs:DescribeTaskDefinition",
-      "ecs:UpdateService",
       "ecs:RegisterTaskDefinition",
     ]
 
