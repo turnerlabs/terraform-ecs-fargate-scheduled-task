@@ -34,10 +34,11 @@ data "aws_iam_policy_document" "cicd_policy" {
 
     actions = [
       "ecr:GetAuthorizationToken",
-      "ecs:DescribeServices",
       "ecs:DescribeTaskDefinition",
-      "ecs:UpdateService",
       "ecs:RegisterTaskDefinition",
+      "sts:GetCallerIdentity",
+      "events:ListTargetsByRule",
+      "events:PutTargets",
     ]
 
     resources = [
@@ -56,6 +57,7 @@ data "aws_iam_policy_document" "cicd_policy" {
     resources = [
       "${aws_iam_role.app_role.arn}",
       "${aws_iam_role.ecsTaskExecutionRole.arn}",
+      "${aws_iam_role.cloudwatch_events_role.arn}",
     ]
   }
 }
