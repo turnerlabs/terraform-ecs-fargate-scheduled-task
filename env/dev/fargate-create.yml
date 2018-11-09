@@ -1,6 +1,10 @@
 # this file is used by fargate-create (https://github.com/turnerlabs/fargate-create)
 # if not using fargate-create, this file can be ignored/deleted
 
+# the type of template (e.g.: Service, ScheduledTask)
+templateType: ScheduledTask
+
+# file customization
 prompts:
 
   - question: "Would you like an IAM user that can be used for CI/CD pipelines?"
