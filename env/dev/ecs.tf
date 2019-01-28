@@ -11,6 +11,7 @@
 
 resource "aws_ecs_cluster" "app" {
   name = "${local.namespace}"
+  tags = "${var.tags}"
 }
 
 # name of the container in the task definition
