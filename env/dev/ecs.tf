@@ -49,6 +49,8 @@ resource "aws_ecs_task_definition" "app" {
   }
 ]
 DEFINITION
+
+  tags = "${var.tags}"
 }
 
 # https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html
