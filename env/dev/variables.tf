@@ -11,23 +11,28 @@ variable "region" {
 
 # Tags for the infrastructure
 variable "tags" {
-  type = "map"
+  type = map(string)
 }
 
 # The application's name
-variable "app" {}
+variable "app" {
+}
 
 # The environment that is being built
-variable "environment" {}
+variable "environment" {
+}
 
 # The VPC to use for the Fargate cluster
-variable "vpc" {}
+variable "vpc" {
+}
 
 # The private subnets, minimum of 2, that are a part of the VPC(s)
-variable "private_subnets" {}
+variable "private_subnets" {
+}
 
 # The public subnets, minimum of 2, that are a part of the VPC(s)
-variable "public_subnets" {}
+variable "public_subnets" {
+}
 
 # locals
 
@@ -35,3 +40,4 @@ locals {
   namespace = "${var.app}-${var.environment}"
   log_group = "/fargate/task/${local.namespace}"
 }
+
