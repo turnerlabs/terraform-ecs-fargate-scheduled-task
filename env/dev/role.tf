@@ -50,4 +50,3 @@ data "aws_iam_policy_document" "app_role_assume_role_policy" {
     }
   }
 }
-

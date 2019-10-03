@@ -136,9 +136,15 @@ resource "aws_iam_role_policy" "events_ecs_passrole" {
   policy = data.aws_iam_policy_document.passrole.json
 }
 
+variable "logs_retention_in_days" {
+  type        = number
+  default     = 90
+  description = "Specifies the number of days you want to retain log events"
+}
+
 resource "aws_cloudwatch_log_group" "logs" {
   name = local.log_group
-  retention_in_days = "14"
+  retention_in_days = var.logs_retention_in_days
   tags = var.tags
 }
 
