@@ -35,17 +35,17 @@ $ terraform apply
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | app | The application's name | string | - | yes |
-| aws_profile | The AWS Profile to use | string | - | yes |
-| container_name | name of the container in the task definition | string | `app` | no |
+| aws\_profile | The AWS Profile to use | string | - | yes |
+| container\_name | name of the container in the task definition | string | `app` | no |
 | environment | The environment that is being built | string | - | yes |
-| logz_token | The auth token to use for sending logs to Logz.io | string | - | yes |
-| logz_url | The endpoint to use for sending logs to Logz.io | string | `https://listener.logz.io:8071` | no |
-| private_subnets | The private subnets, minimum of 2, that are a part of the VPC(s) | string | - | yes |
-| public_subnets | The public subnets, minimum of 2, that are a part of the VPC(s) | string | - | yes |
+| logz\_token | The auth token to use for sending logs to Logz.io | string | - | yes |
+| logz\_url | The endpoint to use for sending logs to Logz.io | string | `https://listener.logz.io:8071` | no |
+| private\_subnets | The private subnets, minimum of 2, that are a part of the VPC(s) | string | - | yes |
+| public\_subnets | The public subnets, minimum of 2, that are a part of the VPC(s) | string | - | yes |
 | region | The AWS region to use for the dev environment's infrastructure Currently, Fargate is only available in `us-east-1`. | string | `us-east-1` | no |
-| saml_role | The SAML role to use for adding users to the ECR policy | string | - | yes |
-| schedule_expression | The shedule on which to run the fargate task. Follows the CloudWatch Event Schedule Expression format: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html | string | - | yes |
-| secrets_saml_users | The users (email addresses) from the saml role to give access | list | - | yes |
+| saml\_role | The SAML role to use for adding users to the ECR policy | string | - | yes |
+| schedule\_expression | The shedule on which to run the fargate task. Follows the CloudWatch Event Schedule Expression format: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html | string | - | yes |
+| secrets\_saml\_users | The users (email addresses) from the saml role to give access | list | - | yes |
 | tags | Tags for the infrastructure | map | - | yes |
 | vpc | The VPC to use for the Fargate cluster | string | - | yes |
 
@@ -53,9 +53,9 @@ $ terraform apply
 
 | Name | Description |
 |------|-------------|
-| aws_profile | Command to set the AWS_PROFILE |
-| cicd_keys | The AWS keys for the CICD user to use in a build system |
-| docker_registry | The URL for the docker image repo in ECR |
+| aws\_profile | Command to set the AWS\_PROFILE |
+| cicd\_keys | The AWS keys for the CICD user to use in a build system |
+| docker\_registry | The URL for the docker image repo in ECR |
 | register | Command to register a new task definition for the task |
 | status | Command to view the status of the Fargate service |
 
